@@ -1,24 +1,46 @@
 import React from "react";
 import Image from "next/image";
-import { Links } from "./ui/links";
 import Link from "next/link";
+import { Button } from "./ui/button";
+
+const navItems = [
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Gallery', href: '/gallery' },
+]
 
 export const Navigation = () => {
   return (
-    <nav className='atf-container sm:pt-10 md:pt-11 m-0 bg-nav drop-shadow flex flex-col md:flex-row items-center justify-between xs:justify-end'>
-      <section className='w-full md:w-1/2' id='logo'>
-        <Link href={"/"}>
-          <Image src='/logo.svg' width='100' height='95' alt='logo' />
+    <nav className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-4 md:p-6">
+      <div className="flex items-center">
+        <Link href="/" className="flex items-center space-x-2">
+          <Image
+            src="/logo.png"
+            alt="Del Villal Gardening Logo"
+            width={50}
+            height={50}
+            className="rounded-full"
+          />
+          <span className="text-white font-semibold text-xl md:text-2xl">Del Villal Gardening</span>
         </Link>
-      </section>
-      <section
-        className='w-full pt-4 pb-8 md:py-0 md:w-1/2 flex flex-row justify-start'
-        id='links-and-phone'
-      >
-        <div className='' id='links'>
-          <Links orientation='horizontal' size='small' />
-        </div>
-      </section>
+      </div>
+      <div className="hidden md:flex space-x-4">
+        {navItems.map((item) => (
+          <Link key={item.name} href={item.href}>
+            <Button variant="ghost" className="text-white hover:text-del-green-300">
+              {item.name}
+            </Button>
+          </Link>
+        ))}
+      </div>
+      <div className="md:hidden">
+        <Button variant="ghost" className="text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </Button>
+      </div>
     </nav>
   );
 };

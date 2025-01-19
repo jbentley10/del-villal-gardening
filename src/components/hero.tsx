@@ -7,6 +7,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import { Navigation } from "./navigation";
 
 export interface HeroProps {
   heading: string;
@@ -22,29 +23,35 @@ export const Hero: React.FC<HeroProps> = ({
   buttonText,
 }) => {
   return (
-    <section className='h-dvh md:h-auto mt-0 sm:pt-10 md:pt-11 lg:pt-14 xl:pt-16 atf-container bg-primary relative w-full flex'>
-      <div className='hidden md:inline w-0 md:w-1/2'>
-        <Image
-          src='/hero-image.webp'
-          width={1201}
-          height={1321}
-          alt='A monotone red image of a man addressing a crowd'
-          loading='eager'
-        />
-      </div>
-      <div className='w-full md:w-1/2 relative z-10 text-left'>
-        <div className='mb-16 max-w-md'>
-          <h1 className='pb-7 text-white font-bold tracking-tight'>
-            {heading}
-          </h1>
-          <p className='text-lg text-white'>{subheading}</p>
-        </div>
-        <Button size={`lg`} className='mr-6'>
-          <Link href={buttonLink} prefetch={false}>
-            {buttonText}
-          </Link>
+    <div className="relative h-screen w-full overflow-hidden">
+      {/* Background Image */}
+      {/* <Image
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20230206_093815-18ZdedTBOlfsrAG1zA0nO7LYE5vZdZ.webp"
+        alt="Well-maintained putting green with yellow flags"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        priority
+      /> */}
+
+      {/* Darkening Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-60" />
+
+      {/* Navigation */}
+      <Navigation />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 drop-shadow-lg">
+          Transform Your Desert into an Oasis
+        </h1>
+        <Button 
+          size="lg" 
+          className="bg-del-green-500 hover:bg-del-green-600 text-white font-semibold px-8 py-3 text-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+        >
+          Start Your Garden Journey
         </Button>
       </div>
-    </section>
+    </div>
   );
 };

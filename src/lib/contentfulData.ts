@@ -208,8 +208,6 @@ export async function fetchBlocksBySlug(slug: string, locale: string) {
       _id
       heading
       imageOnLeft
-      buttonText
-      buttonLink
       descriptionRich {
         json
       }

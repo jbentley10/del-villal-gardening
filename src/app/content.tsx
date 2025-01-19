@@ -54,8 +54,6 @@ const blockByType = (block: any) => {
           image={block.image}
           subtext={block.descriptionRich}
           imageOnLeft={block.imageOnLeft}
-          buttonText={block.buttonText}
-          buttonLink={block.buttonLink}
         />
       );
 
