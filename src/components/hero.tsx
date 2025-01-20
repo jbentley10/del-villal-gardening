@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = ({
       <Navigation />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-20">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 drop-shadow-lg">
           {heading}
         </h1>
