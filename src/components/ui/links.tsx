@@ -7,21 +7,17 @@ let linkList = [
     url: "/about",
   },
   {
-    name: "What We Do",
-    url: "/what-we-do",
+    name: "Services",
+    url: "/services",
   },
   {
-    name: "Get Involved",
-    url: "/get-involved",
+    name: "Contact",
+    url: "/contact",
   },
   {
-    name: "Donate",
-    url: "/donate",
-  },
-  {
-    name: "Resources",
-    url: "/resources",
-  },
+    name: "Gallery",
+    url: "/gallery",
+  }
 ];
 
 export interface LinksProps {

@@ -29,16 +29,14 @@ export const Footer = () => {
             >
               <Links orientation='vertical' size={"large"} />
             </div>
-
-            <div className={"information sm:pl-4 pl-16"}>
-              <p>Privacy Policy</p>
-            </div>
           </div>
         </div>
       </div>
       <p className={"text-center mt-12 pb-10"}>
-        Copyright 2024{" "}
-        <Link
+        &copy; {new Date().getFullYear()}{" "}Del Villal Gardening
+        <br />
+        <br />
+        Website design by <Link
           className={"font-bold"}
           href='https://palmspringswebdesign.net'
           target='_blank'
