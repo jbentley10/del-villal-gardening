@@ -7,8 +7,8 @@ import Content from "../content";
 
 // Set metadata
 export const metadata = {
-  title: "Home | Del Villal Gardening",
-  description: "Professional landscaping and garden maintenance services for residential and commercial properties. From irrigation and lighting to tree care and regular upkeep. Licensed and insured.",
+  title: "Contact | Del Villal Gardening",
+  description: "Ready to transform your outdoor space? Get a free estimate for landscaping, garden maintenance, or commercial services. Call us today or fill out our easy contact form.",
 };
 
 export default async function Contact() {
