@@ -13,8 +13,10 @@ import { DividerText } from "@/components/divider-text";
 import { CallToAction } from "@/components/call-to-action";
 import { Heading } from "@/components/heading";
 import { ImageTextBlock } from "@/components/image-text-block";
-import { ImageCards, ImageCardType } from "@/components/image-cards";
-import LogoRow, { LogoType } from "@/components/logo-row";
+import { ImageCards } from "@/components/image-cards";
+import { FeatureSelection } from "@/components/feature-selection";
+import { ServicesOverview } from "@/components/services-overview";
+import BeforeAfterSlider from "@/components/before-after-slider";
 
 const blockByType = (block: any) => {
   // Get the content type from the block content properties
@@ -24,6 +26,7 @@ const blockByType = (block: any) => {
     case "HeroBlock":
       return (
         <Hero
+          image={block.image}
           heading={block.heading}
           subheading={block.subheading}
           buttonLink={block.buttonLink}
@@ -61,15 +64,33 @@ const blockByType = (block: any) => {
       console.log(block);
       return <ImageCards cards={block.imageCardsCollection.items} />;
 
-    case "LogoRow":
-      if (block.fields) {
-        const logos = block.logos;
-        const logosFields: LogoType[] = logos.map(
-          (logo: { fields: {} }) => logo.fields
-        );
+    case "FeatureSelection":
+      return (
+        <FeatureSelection
+          image={block.image}
+          heading={block.heading}
+          subtext={block.subtext}
+          featureList={block.featureList}
+        />
+      );
 
-        return <LogoRow heading={block.heading} logos={logosFields} />;
-      }
+    case "ServicesOverview":
+      return (
+        <ServicesOverview
+          image={block.image}
+          heading={block.heading}
+          subtext={block.subtext}
+          serviceList={block.serviceList}
+        />
+      );
+
+    case "BeforeAfterImage":
+      return (
+        <BeforeAfterSlider
+        beforeImage={block.beforeImage}
+        afterImage={block.afterImage}
+        />
+      )
   }
 };
 

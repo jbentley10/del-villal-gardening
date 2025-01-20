@@ -13,10 +13,11 @@ export const Footer = () => {
       <div className={"flex flex-col sm:flex-row"}>
         <div className={"pl-16 sm:pl-0 sm:w-1/2 pt-14 pb-10"}>
           <Image
-            src='/logo.svg'
-            width='200'
-            height='195'
-            alt='The logo for PIRC'
+            src="/logo-white.png"
+            alt="Del Villal Gardening Logo"
+            width={300}
+            height={150}
+            className="rounded-full"
           />
         </div>
         <div className={`sm:w-1/2 pt-14`}>

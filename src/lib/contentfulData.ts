@@ -142,18 +142,15 @@ export async function fetchBlocksBySlug(slug: string, locale: string) {
               __typename
               ...CallToActionBlockFields
               ...DividerTextBlockFields
-              ...DonationTiersBlockFields
               ...ExampleBlockFields
               ...HeadingFields
               ...HeroBlockFields
               ...ImageAndTextBlockFields
-              # ...ImageCardsFields
               ...ImageGridFields
               ...ImageSlidesBlockFields
-              # ...LogoRowFields
-              ...OurHistoryBlockFields
-              ...QuickStatisticsBlockFields
-              ...ResourcesBlockFields
+              ...FeatureSelectionFields
+              ...ServicesOverviewFields
+              ...BeforeAfterImageFields
             }
           }
         }
@@ -173,19 +170,6 @@ export async function fetchBlocksBySlug(slug: string, locale: string) {
       text
     }
 
-    fragment DonationTiersBlockFields on DonationTiersBlock {
-      _id
-      heading
-      tier1Heading
-      tier1Subheading
-      tier2Heading
-      tier2Subheading
-      tier3Heading
-      tier3Subheading
-      ctaText
-      ctaLink
-    }
-
     fragment ExampleBlockFields on ExampleBlock {
       _id
       example
@@ -198,8 +182,12 @@ export async function fetchBlocksBySlug(slug: string, locale: string) {
 
     fragment HeroBlockFields on HeroBlock {
       _id
+      image {
+        title
+        description
+        url
+      }
       heading
-      subHeading
       buttonText
       buttonLink
     }
@@ -230,23 +218,50 @@ export async function fetchBlocksBySlug(slug: string, locale: string) {
       _id
     }
 
-    fragment OurHistoryBlockFields on OurHistoryBlock {
-      _id
+    fragment FeatureSelectionFields on FeatureSelection {
+      image {
+        title
+        description
+        url
+        width
+        height
+      }
       heading
-      subheading
-      year1
-      text1
+      subtext
+      featureList {
+        json
+      }
     }
 
-    fragment QuickStatisticsBlockFields on QuickStatisticsBlock {
-      _id
+    fragment ServicesOverviewFields on ServicesOverview {
+      image {
+        title
+        description
+        url
+        width
+        height
+      }
       heading
+      subtext
+      serviceList {
+        json
+      }
     }
-
-    fragment ResourcesBlockFields on ResourcesBlock {
-      _id
-      heading
-      subheading
+    fragment BeforeAfterImageFields on BeforeAfterImage {
+      beforeImage {
+        title
+        description
+        url
+        width
+        height
+      }
+      afterImage {
+        title
+        description
+        url
+        width
+        height
+      }
     }
   `;
 

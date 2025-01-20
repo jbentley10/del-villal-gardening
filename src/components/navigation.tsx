@@ -16,13 +16,12 @@ export const Navigation = () => {
       <div className="flex items-center">
         <Link href="/" className="flex items-center space-x-2">
           <Image
-            src="/logo.png"
+            src="/logo-white.png"
             alt="Del Villal Gardening Logo"
-            width={50}
-            height={50}
+            width={300}
+            height={150}
             className="rounded-full"
           />
-          <span className="text-white font-semibold text-xl md:text-2xl">Del Villal Gardening</span>
         </Link>
       </div>
       <div className="hidden md:flex space-x-4">
