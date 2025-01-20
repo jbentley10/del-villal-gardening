@@ -28,7 +28,6 @@ const blockByType = (block: any) => {
         <Hero
           image={block.image}
           heading={block.heading}
-          subheading={block.subheading}
           buttonLink={block.buttonLink}
           buttonText={block.buttonText}
         />
