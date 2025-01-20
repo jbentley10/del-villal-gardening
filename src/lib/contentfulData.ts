@@ -178,6 +178,11 @@ export async function fetchBlocksBySlug(slug: string, locale: string) {
     fragment HeadingFields on Heading {
       _id
       headingText
+      backgroundImage {
+        title
+        description
+        url
+      }
     }
 
     fragment HeroBlockFields on HeroBlock {

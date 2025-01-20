@@ -42,9 +42,9 @@ export const Hero: React.FC<HeroProps> = ({
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 drop-shadow-lg">
           {heading}
         </h1>
-        <Button 
-          size="lg" 
-          className="bg-del-green-500 hover:bg-del-green-600 text-white font-semibold px-8 py-3 text-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105"
+        <Button
+          size="lg"
+          className="bg-white text-del-green-800 hover:bg-del-green-100 font-semibold px-8 py-3 text-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 rounded-full border-2 border-del-green-500"
         >
           {buttonText}
         </Button>

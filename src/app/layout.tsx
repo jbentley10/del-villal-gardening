@@ -1,13 +1,13 @@
 "use client";
 
-import { Antonio, Inter } from "next/font/google";
+import { Inter, DM_Serif_Text } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Navigation } from "../components/navigation";
 import { Footer } from "../components/footer";
 
 // Declare fonts
-const antonio = Antonio({ subsets: ["latin"] });
+const dmSerifText = DM_Serif_Text({ weight: "400", subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
@@ -24,12 +24,12 @@ export default function RootLayout({
         h4,
         button,
         span,
-        .antonio {
-          font-family: ${antonio.style.fontFamily};
+        .dm-serif-text {
+          font-family: ${dmSerifText.style.fontFamily};
         }
 
         button > a {
-          font-family: ${antonio.style.fontFamily};
+          font-family: ${dmSerifText.style.fontFamily};
         }
 
         p,
