@@ -11,7 +11,7 @@ export const Footer = () => {
       }
     >
       <div className={"flex flex-col sm:flex-row"}>
-        <div className={"pl-16 sm:pl-0 sm:w-1/2 pt-14 pb-10"}>
+        <div className={"sm:pl-0 sm:w-1/2 pt-14 pb-10 align-center"}>
           <Image
             src="/logo-white.png"
             alt="Del Villal Gardening Logo"
@@ -24,7 +24,7 @@ export const Footer = () => {
           <div className={"flex flex-col sm:flex-row"}>
             <div
               className={
-                "links sm:border-r-2 border-white pl-16 sm:pl-0 sm:pr-4 md:pr-20"
+                "links sm:border-r-2 border-white sm:pl-0 sm:pr-4 md:pr-20"
               }
             >
               <Links orientation='vertical' size={"large"} />

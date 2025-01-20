@@ -31,7 +31,7 @@ export const Links: React.FC<LinksProps> = ({ orientation, size }) => {
       className={
         orientation == "horizontal"
           ? "flex flex-row"
-          : "flex flex-row sm:flex-col"
+          : "flex flex-row sm:flex-col justify-center"
       }
     >
       {linkList.map((link, index) => (
