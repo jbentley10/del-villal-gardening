@@ -1,7 +1,7 @@
 import type React from "react"
 import Image from "next/image"
 
-interface HeadingProps {
+export interface HeadingProps {
   heading: string
   backgroundImage: {
     title: string;
@@ -10,7 +10,10 @@ interface HeadingProps {
   };
 }
 
-export const Heading: React.FC<HeadingProps> = ({ heading, backgroundImage }) => {
+export const Heading: React.FC<HeadingProps> = ({ 
+  heading, 
+  backgroundImage 
+}) => {
   return (
     <section className="h-dvh md:h-auto mt-0 sm:pt-10 md:pt-32 relative w-full flex">
       <Image
