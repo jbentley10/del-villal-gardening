@@ -77,8 +77,8 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
       >
         <div className="absolute inset-0">
           <Image
-            src={beforeImage.url || "/placeholder.svg"}
-            alt={beforeImage.description}
+            src={afterImage.url || "/placeholder.svg"}
+            alt={afterImage.description}
             fill
             className="object-cover"
           />
@@ -88,8 +88,8 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
         >
           <Image
-            src={afterImage.url || "/placeholder.svg"}
-            alt={afterImage.description}
+            src={beforeImage.url || "/placeholder.svg"}
+            alt={beforeImage.description}
             fill
             className="object-cover"
           />

@@ -33,7 +33,6 @@ export const Navigation = () => {
       style={{
         backgroundColor: 'rgba(75, 87, 72, 0.25)',
         WebkitBackdropFilter: 'blur(4px)',
-        backdropFilter: 'blur(4px)',
         height: '10rem'
       }}
     >

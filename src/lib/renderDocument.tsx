@@ -24,7 +24,7 @@ export const renderDocument = (document: any) => {
         </>
       ),
       [BLOCKS.UL_LIST]: (node: any, children: React.ReactNode) => (
-        <ul>{children}</ul>
+        <ul className={'pl-8'}>{children}</ul>
       ),
     },
     renderText: (text: string) =>
