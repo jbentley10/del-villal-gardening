@@ -97,28 +97,28 @@ const blockByType = (block: any) => {
         />
       )
 
-    case "imageGridBlock":
-      if (block.fields) {
-        let fields = block.fields;
-        let { image1, image2, image3, image4, image5 } = fields;
-        let images: Array<ContentfulImage> = [
-          image1,
-          image2,
-          image3,
-          image4,
-          image5,
-        ];
+    case "imageGrid":
+      console.log(block);
+      let { image1, image2, image3, image4, image5 } = block;
+      let images: Array<ContentfulImage> = [
+        image1,
+        image2,
+        image3,
+        image4,
+        image5,
+      ];
 
-        return (
-          <ImageGrid
-            images={images}
-            textCallout={fields.textCallout}
-            subtext={fields.subtext}
-          />
-        );
-      }
+      return (
+        <ImageGrid
+          images={images}
+          textCallout={block.textCallout}
+          subtext={block.subtext}
+        />
+      );
+
+    default:
       return false;
-  }
+    }
 };
 
 interface ContentProps {

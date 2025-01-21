@@ -1,8 +1,9 @@
 import React, { ReactNode, useState, useEffect } from "react";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const renderDocument = (document: any) => {
   const options = {
@@ -27,9 +28,33 @@ export const renderDocument = (document: any) => {
       [BLOCKS.UL_LIST]: (node: any, children: ReactNode) => (
         <ul className='pl-8'>{children}</ul>
       ),
-      [BLOCKS.LIST_ITEM]: (node: any, children: ReactNode) => (
-        <li>{children}</li>
-      ),
+      [INLINES.HYPERLINK]: (node: any, children: ReactNode) => {
+        const { uri } = node.data;
+      
+        // Handle internal links (starting with '/')
+        if (uri.startsWith('/')) {
+          return (
+            <Link 
+              href={uri}
+              className="text-primary hover:text-primary-dark underline bolder"
+            >
+              {children}
+            </Link>
+          );
+        }
+        
+        // Handle external links
+        return (
+          <a
+            href={uri}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary-dark underline"
+          >
+            {children}
+          </a>
+        );
+      },
     },
     renderText: (text: string) =>
       text.split("\n").flatMap((text, i) => [i > 0 && <br key={i} />, text]),
@@ -96,7 +121,7 @@ export const RenderShorthand: React.FC<RenderShorthandProps> = ({
       ),
       [BLOCKS.LIST_ITEM]: (node: any, children: ReactNode) => (
         <li>{children}</li>
-      ),
+      )
     },
   };
 

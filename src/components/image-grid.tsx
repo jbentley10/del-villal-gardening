@@ -16,6 +16,8 @@ export function ImageGrid(props: {
 }) {
   let modifiedImages = [];
 
+  console.log(props.images);
+
   for (let i = 0; i < props.images.length; i++) {
     let { title, description, url, width, height } = props.images[i];
 

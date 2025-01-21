@@ -25,6 +25,7 @@ export const ImageTextBlock: React.FC<ImageTextBlockProps> = ({
 }) => {
   return (
     <section
+      id={heading}
       className={`component-container component-spacer flex ${
         imageOnLeft === true
           ? "flex-col md:flex-row"
@@ -41,7 +42,7 @@ export const ImageTextBlock: React.FC<ImageTextBlockProps> = ({
         }`}
       />
       <div className={"md:w-1/2"}>
-        <h2 className={"pb-12"}>{heading}</h2>
+        <h2 className={"pt-8 pb-6"}>{heading}</h2>
         <div>{renderDocument(descriptionRich.json)}</div>
       </div>
     </section>

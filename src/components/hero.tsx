@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import { Navigation } from "./navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface HeroProps {
   image: {
@@ -18,6 +19,7 @@ export const Hero: React.FC<HeroProps> = ({
   image,
   heading,
   buttonText,
+  buttonLink
 }) => {
   return (
     <div className="relative h-screen w-full overflow-hidden">
@@ -42,12 +44,14 @@ export const Hero: React.FC<HeroProps> = ({
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 drop-shadow-lg">
           {heading}
         </h1>
-        <Button
-          size="lg"
-          className="bg-white text-del-green-800 hover:bg-del-green-100 font-semibold px-8 py-3 text-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 rounded-full border-2 border-del-green-500"
-        >
-          {buttonText}
-        </Button>
+        <Link href={buttonLink}>
+          <Button
+            size="lg"
+            className="bg-white text-del-green-800 hover:bg-del-green-100 font-semibold px-8 py-3 text-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 rounded-full border-2 border-del-green-500"
+          >
+            {buttonText}
+          </Button>
+        </Link>
       </div>
     </div>
   );

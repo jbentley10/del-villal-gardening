@@ -40,6 +40,15 @@ export default function RootLayout({
         a {
           font-family: ${inter.style.fontFamily};
         }
+
+        @media (max-width: 628px) {
+          h1 {
+            font-size: 52px;
+          }
+          h2 {
+            font-size: 48px; 
+          }
+        }
       `}</style>
       <head>
         <link rel='icon' href='/favicon.ico' sizes='any' />

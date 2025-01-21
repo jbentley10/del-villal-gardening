@@ -215,6 +215,9 @@ export async function fetchBlocksBySlug(slug: string, locale: string) {
 
     fragment ImageGridFields on ImageGrid {
       _id
+      imageGridName
+      textCallout
+      subtext
       image1 {
         title
         description
@@ -250,8 +253,6 @@ export async function fetchBlocksBySlug(slug: string, locale: string) {
         width
         height
       }
-      textCallout
-      subtext
     }
 
     fragment ImageSlidesBlockFields on ImageSlidesBlock {
