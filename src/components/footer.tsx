@@ -29,7 +29,7 @@ export const Footer = () => {
             >
               <Links orientation='vertical' size={"large"} />
             </div>
-            <h3 className="md:pl-4">(760) 844-5270</h3>
+            <h3 className="md:pl-4 text-center md:text-left">(760) 844-5270</h3>
           </div>
         </div>
       </div>
