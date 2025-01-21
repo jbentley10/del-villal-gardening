@@ -34,11 +34,10 @@ export default async function Contact() {
             <h2 className={"text-primary mb-20"}>(760) 844-5270</h2>
           </div>
         </div>
-        <div className='container px-4 mt-10 md:px-6'>
+        {/* <div className='container px-4 mt-10 md:px-6'>
             <ContactCopy />
             <ContactForm />
-          </div>
-        ;
+        </div> */}
       </main>
     </>
   );
