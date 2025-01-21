@@ -13,10 +13,6 @@ let linkList = [
   {
     name: "Contact",
     url: "/contact",
-  },
-  {
-    name: "Gallery",
-    url: "/gallery",
   }
 ];
 
