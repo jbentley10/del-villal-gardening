@@ -1,37 +1,70 @@
-/**
- * @file renderDocument.js
- */
-import React from "react";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
-import Image from "next/image";
+import { Document, Block } from '@contentful/rich-text-types';
+import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
+import Image from 'next/image';
 
-export const renderDocument = (document: any) => {
-  const options = {
+interface EmbeddedAssetBlock extends Block {
+  data: {
+    target: {
+      fields: {
+        file: {
+          url: string;
+          details: {
+            image: {
+              width: number;
+              height: number;
+            };
+          };
+        };
+        title: string;
+      };
+    };
+  };
+}
+
+export const renderDocument = (document: Document) => {
+  const options: Options = {
     renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node: any) => (
-        <Image
-          src={`https:${node.data?.target?.fields?.file?.url}`}
-          alt={node.data?.target?.fields?.title}
-          width={node.data?.target?.fields?.file?.details?.image?.width}
-          height={node.data?.target?.fields?.file?.details?.image?.height}
-        />
+      [BLOCKS.EMBEDDED_ASSET]: (node: EmbeddedAssetBlock) => {
+        const { url } = node.data.target.fields.file;
+        const { title } = node.data.target.fields;
+        const { width, height } = node.data.target.fields.file.details.image;
+        
+        return (
+          <Image
+            src={`https:${url}`}
+            alt={title}
+            width={width}
+            height={height}
+            className="my-4"
+          />
+        );
+      },
+      [BLOCKS.PARAGRAPH]: (_node: Block, children: React.ReactNode) => (
+        <p className="mb-4">
+          {children}
+        </p>
       ),
-      [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => (
-        <>
-          <p>{children}</p>
-          <br />
-        </>
-      ),
-      [BLOCKS.UL_LIST]: (node: any, children: React.ReactNode) => (
-        <ul className={'pl-8'}>{children}</ul>
+      [BLOCKS.UL_LIST]: (_node: Block, children: React.ReactNode) => (
+        <ul className="pl-8 list-disc mb-4">
+          {children}
+        </ul>
       ),
     },
-    renderText: (text: string) =>
-      text
-        .split("\n")
-        .flatMap((text, i) => [i > 0 && <br key={Math.random()} />, text]),
+    renderText: (text: string) => {
+      return text.split('\n').reduce<React.ReactNode[]>((children, textSegment, index) => {
+        if (index > 0) {
+          children.push(<br key={`br-${index}`} />);
+        }
+        children.push(textSegment);
+        return children;
+      }, []);
+    },
   };
 
-  return documentToReactComponents(document, options);
+  if (!document) {
+    return null;
+  }
+
+  return documentToReactComponents(document as Document, options as Options);
 };

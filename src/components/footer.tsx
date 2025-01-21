@@ -29,6 +29,7 @@ export const Footer = () => {
             >
               <Links orientation='vertical' size={"large"} />
             </div>
+            <h3 className="pl-4">(760) 844-5270</h3>
           </div>
         </div>
       </div>

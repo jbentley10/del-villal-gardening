@@ -28,6 +28,10 @@ export default function RootLayout({
           font-family: ${dmSerifText.style.fontFamily};
         }
 
+        h3 {
+          font-size: 1.5rem;
+        }
+
         button > a {
           font-family: ${dmSerifText.style.fontFamily};
         }

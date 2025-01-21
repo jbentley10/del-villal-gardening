@@ -15,7 +15,7 @@ export const Heading: React.FC<HeadingProps> = ({
   backgroundImage 
 }) => {
   return (
-    <section className="h-dvh md:h-auto mt-0 sm:pt-10 md:pt-32 relative w-full flex">
+    <section className="h-dvh md:h-auto mt-0 sm:pt-10 md:pt-48 relative w-full flex">
       <Image
         src={backgroundImage.url}
         alt={backgroundImage.description}

@@ -17,6 +17,7 @@ import { ImageCards } from "@/components/image-cards";
 import { FeatureSelection } from "@/components/feature-selection";
 import { ServicesOverview } from "@/components/services-overview";
 import BeforeAfterSlider from "@/components/before-after-slider";
+import ImageGrid, { ContentfulImage } from "@/components/image-grid";
 
 const blockByType = (block: any) => {
   // Get the content type from the block content properties
@@ -58,8 +59,8 @@ const blockByType = (block: any) => {
       return (
         <ImageTextBlock
           heading={block.heading}
+          descriptionRich={block.descriptionRich}
           image={block.image}
-          subtext={block.descriptionRich}
           imageOnLeft={block.imageOnLeft}
         />
       );
@@ -95,6 +96,28 @@ const blockByType = (block: any) => {
         afterImage={block.afterImage}
         />
       )
+
+    case "imageGridBlock":
+      if (block.fields) {
+        let fields = block.fields;
+        let { image1, image2, image3, image4, image5 } = fields;
+        let images: Array<ContentfulImage> = [
+          image1,
+          image2,
+          image3,
+          image4,
+          image5,
+        ];
+
+        return (
+          <ImageGrid
+            images={images}
+            textCallout={fields.textCallout}
+            subtext={fields.subtext}
+          />
+        );
+      }
+      return false;
   }
 };
 

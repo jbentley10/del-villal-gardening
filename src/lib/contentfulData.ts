@@ -199,8 +199,7 @@ export async function fetchBlocksBySlug(slug: string, locale: string) {
 
     fragment ImageAndTextBlockFields on ImageAndTextBlock {
       _id
-      heading
-      imageOnLeft
+      heading      
       descriptionRich {
         json
       }
@@ -211,12 +210,48 @@ export async function fetchBlocksBySlug(slug: string, locale: string) {
         width
         height
       }
+      imageOnLeft
     }
 
     fragment ImageGridFields on ImageGrid {
       _id
-      imageGridName
+      image1 {
+        title
+        description
+        url
+        width
+        height
+      }
+      image2 {
+        title
+        description
+        url
+        width
+        height
+      }
+      image3 {
+        title
+        description
+        url
+        width
+        height
+      }
+      image4 {
+        title
+        description
+        url
+        width
+        height
+      }
+      image5 {
+        title
+        description
+        url
+        width
+        height
+      }
       textCallout
+      subtext
     }
 
     fragment ImageSlidesBlockFields on ImageSlidesBlock {

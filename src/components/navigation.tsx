@@ -6,8 +6,8 @@ import { Button } from "./ui/button";
 const navItems = [
   { name: 'About', href: '/about' },
   { name: 'Services', href: '/services' },
-  { name: 'Contact', href: '/contact' },
   { name: 'Gallery', href: '/gallery' },
+  { name: 'Contact', href: '/contact' }
 ]
 
 export const Navigation = () => {
