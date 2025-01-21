@@ -11,7 +11,7 @@ export const Footer = () => {
       }
     >
       <div className={"flex flex-col sm:flex-row"}>
-        <div className={"sm:pl-0 sm:w-1/2 pt-14 pb-10 align-center"}>
+        <div className={"sm:pl-0 w-full md:w-1/2 pt-14 pb-10 align-center"}>
           <Image
             src="/logo-white.png"
             alt="Del Villal Gardening Logo"
