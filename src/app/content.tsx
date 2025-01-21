@@ -17,7 +17,7 @@ import { ImageCards } from "@/components/image-cards";
 import { FeatureSelection } from "@/components/feature-selection";
 import { ServicesOverview } from "@/components/services-overview";
 import BeforeAfterSlider from "@/components/before-after-slider";
-import ImageGrid, { ContentfulImage } from "@/components/image-grid";
+import { ImageGrid, ContentfulImage } from "@/components/image-grid";
 
 const blockByType = (block: any) => {
   // Get the content type from the block content properties
