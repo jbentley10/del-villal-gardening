@@ -29,7 +29,7 @@ export const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? "bg-del-green-800 bg-opacity-95" : ""}`}
+      className={`pt-6 md:pt-0 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? "bg-del-green-800 bg-opacity-95" : ""}`}
       style={{
         backgroundColor: 'rgba(75, 87, 72, 0.25)',
         WebkitBackdropFilter: 'blur(4px)',
@@ -42,7 +42,7 @@ export const Navigation = () => {
         >
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <div className={`pt-20 transition-all duration-300 ease-in-out ${isScrolled ? "w-1/2 h-1/2" : "w-full h-full"}`}>
+            <div className={`pt-4 md:pt-20 transition-all duration-300 ease-in-out ${isScrolled ? "w-1/2 h-1/2" : "w-full h-full"}`}>
               <Image
                 src="/logo-white.png"
                 alt="Del Villal Gardening Logo"
