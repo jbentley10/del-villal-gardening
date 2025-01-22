@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <style jsx global>{`
         h1,
         h2,
@@ -46,12 +46,12 @@ export default function RootLayout({
             font-size: 52px;
           }
           h2 {
-            font-size: 48px; 
+            font-size: 48px;
           }
         }
       `}</style>
       <head>
-        <link rel='icon' href='/favicon.ico' sizes='any' />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body>
         <Navigation />
