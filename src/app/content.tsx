@@ -42,6 +42,7 @@ const blockByType = (block: any) => {
         <CallToAction
           heading={block.heading}
           subheading={block.subheading}
+          optionalRichText={block.optionalRichText}
           buttonText={block.buttonText}
           buttonLink={block.buttonLink}
         />

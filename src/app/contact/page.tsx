@@ -31,13 +31,9 @@ export default async function Contact() {
         >
           <div className={"w-3/4 md:w-1/2"}>
             <h1 className={"text-primary pb-7"}>Give us a call</h1>
-            <h2 className={"text-primary mb-20"}>(760) 844-5270</h2>
+            <a href={'tel:+17608445270'}><h2 className={"text-primary mb-20"}>(760) 844-5270</h2></a>
           </div>
         </div>
-        {/* <div className='container px-4 mt-10 md:px-6'>
-            <ContactCopy />
-            <ContactForm />
-        </div> */}
       </main>
     </>
   );

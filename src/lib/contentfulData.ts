@@ -161,6 +161,9 @@ export async function fetchBlocksBySlug(slug: string, locale: string) {
       _id
       heading
       subheading
+      optionalRichText {
+        json
+      }
       buttonText
       buttonLink
     }
