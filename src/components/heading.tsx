@@ -4,30 +4,32 @@ import Image from "next/image"
 export interface HeadingProps {
   heading: string
   backgroundImage: {
-    title: string;
-    description: string;
-    url: string;
-  };
+    title: string
+    description: string
+    url: string
+  }
 }
 
-export const Heading: React.FC<HeadingProps> = ({ 
-  heading, 
-  backgroundImage 
-}) => {
+export const Heading: React.FC<HeadingProps> = ({ heading, backgroundImage }) => {
   return (
-    <section className="h-dvh md:h-auto mt-0 sm:pt-10 md:pt-48 relative w-full flex">
-      <Image
-        src={backgroundImage.url}
-        alt={backgroundImage.description}
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-        className="z-0"
-      />
-      <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
-      <div className="w-full md:w-1/2 relative z-20 text-left p-8">
-        <div className="mb-16 max-w-md">
-          <h1 className="pt-40 md:pt-0 pb-7 text-white font-bold tracking-tight text-4xl md:text-5xl lg:text-6xl">{heading}</h1>
+    <section className="relative w-full mt-0 pt-32 sm:pt-10">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={backgroundImage.url || "/placeholder.svg"}
+          alt={backgroundImage.description}
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+      </div>
+      <div className="container mx-auto px-10 lg:px-24 relative z-10">
+        <div className="pt-16 pb-20 sm:pt-24 sm:pb-28 md:pt-32 md:pb-36 lg:pt-40 lg:pb-44">
+          <div className="max-w-4xl">
+            <h1 className="text-white font-bold tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+              {heading}
+            </h1>
+          </div>
         </div>
       </div>
     </section>
