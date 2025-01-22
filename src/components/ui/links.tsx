@@ -11,6 +11,10 @@ let linkList = [
     url: "/services",
   },
   {
+    name: "Gallery",
+    url: "/gallery",
+  },
+  {
     name: "Contact",
     url: "/contact",
   }

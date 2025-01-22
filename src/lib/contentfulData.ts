@@ -132,6 +132,52 @@ export async function fetchMetadataBySlug(slug: string) {
   return data.pageCollection.items[0];
 }
 
+// Sort events by dateAndTime (soonest first)
+export async function fetchImages(limit: number) {
+  const query = `
+  query ($limit: Int) {
+    assetCollection (limit:$limit, where: {contentfulMetadata: {tags: {id_contains_some: "image"}}}) {
+      items {
+        contentfulMetadata {
+          tags {
+            name
+          }
+        }
+        title 
+        description 
+        url 
+        width 
+        height
+      }
+    }
+  }`;
+
+  const variables = { limit };
+  const data = await fetchGraphQL(query, variables);
+
+  if (!data || data.assetCollection.items.length === 0) {
+    console.log("Error finding events");
+    return [];
+  }
+
+  const events = data.assetCollection.items.map((entry: any) => ({
+    contentfulMetadata: entry.contentfulMetadata,
+    name: entry.name,
+    description: entry.description,
+    url: entry.url,
+    width: entry.width,
+    height: entry.height,
+  }));
+
+  // Sort events by dateAndTime (soonest first)
+  events.sort(
+    (a: { dateAndTime: string }, b: { dateAndTime: string }) =>
+      new Date(a.dateAndTime).getTime() - new Date(b.dateAndTime).getTime()
+  );
+
+  return events;
+}
+
 export async function fetchBlocksBySlug(slug: string, locale: string) {
   const query = `
     query($slug: String!) {

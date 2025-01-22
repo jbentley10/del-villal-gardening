@@ -2,7 +2,8 @@
  * @file page.tsx
  */
 // Import components and utils
-import { fetchBlocksBySlug } from "../../lib/contentfulData";
+import GalleryGrid from "@/components/gallery-grid";
+import { fetchBlocksBySlug, fetchImages } from "../../lib/contentfulData";
 import Content from "../content";
 
 // Set metadata
@@ -14,6 +15,7 @@ export const metadata = {
 export default async function Gallery() {
   const blocksEnglish = await fetchBlocksBySlug("gallery", "en-US");
   const blocksSpanish = await fetchBlocksBySlug("gallery", "es");
+  const images = await fetchImages(100);
 
   // Wait for the promises to resolve
   const [english, spanish] = await Promise.all([blocksEnglish, blocksSpanish]);
@@ -27,6 +29,7 @@ export default async function Gallery() {
           spanishBlocks={spanish}
         />
       )}
+      <GalleryGrid images={images} />
       ;
     </main>
   );
