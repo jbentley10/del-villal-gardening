@@ -26,7 +26,7 @@ export const Heading: React.FC<HeadingProps> = ({ heading, backgroundImage }) =>
       <div className="container mx-auto px-10 lg:px-24 relative z-10">
         <div className="pt-16 pb-20 sm:pt-24 sm:pb-28 md:pt-32 md:pb-36 lg:pt-40 lg:pb-44">
           <div className="max-w-4xl">
-            <h1 className="text-white font-bold tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="text-white font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               {heading}
             </h1>
           </div>
