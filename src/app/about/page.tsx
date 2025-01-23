@@ -8,7 +8,7 @@ import Content from "../content";
 // Set metadata
 export const metadata = {
   title: "About | Del Villal Gardening",
-  description: "Family-owned landscaping company with over 3 years of experience. Meet our dedicated team of garden and landscape professionals committed to transforming outdoor spaces.",
+  description: "Professional gardener near Palm Springs with a decade of expertise. Family-owned team delivering custom landscape design and garden maintenance services across the Coachella Valley. Transform your outdoor space.",
 };
 
 export default async function About() {

@@ -8,7 +8,7 @@ import Content from "../content";
 // Set metadata
 export const metadata = {
   title: "Services | Del Villal Gardening",
-  description: "Comprehensive landscaping services including garden maintenance, irrigation systems, tree care, and lighting installation. Commercial and residential solutions tailored to your needs.",
+  description: "Local gardener near Palm Springs offering professional garden maintenance, landscape design, and commercial services. Licensed and insured team serving Palm Springs area.",
 };
 
 export default async function Services() {
