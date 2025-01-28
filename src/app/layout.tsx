@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Navigation } from "../components/navigation";
 import { Footer } from "../components/footer";
+import Script from "next/script";
 
 // Declare fonts
 const dmSerifText = DM_Serif_Text({ weight: "400", subsets: ["latin"] });
@@ -58,6 +59,21 @@ export default function RootLayout({
         {children}
         <Analytics />
         <Footer />
+        <Script
+          src='https://www.googletagmanager.com/gtag/js?id=G-F15J6JRHZR'
+          strategy='beforeInteractive'
+        />
+        <Script id='gtag-script'>
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-F15J6JRHZR');`}
+        </Script>
+        <Script
+          id='hs-script-loader'
+          strategy='lazyOnload'
+          src='https://js.hs-scripts.com/47099822.js'
+        />
       </body>
     </html>
   );
