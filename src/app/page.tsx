@@ -24,7 +24,7 @@ export default async function Home() {
       <Head>
         <link
           rel="canonical"
-          href="https://delvillalgardening.com"
+          href="https://www.delvillalgardening.com"
           key="canonical"
         />
       </Head>
