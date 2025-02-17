@@ -2,6 +2,7 @@
  * @file page.tsx
  */
 // Import components and utils
+import Head from "next/head";
 import ContactCopy from "../../components/contact-copy";
 import ContactForm from "../../components/contact-form";
 import { Heading } from "@/components/heading";
@@ -15,6 +16,13 @@ export const metadata = {
 export default async function Contact() {
   return (
     <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://delvillalgardening.com/contact"
+          key="canonical"
+        />
+      </Head>
       <Heading 
         heading="Contact" 
         backgroundImage={{

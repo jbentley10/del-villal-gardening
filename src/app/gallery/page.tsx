@@ -5,6 +5,7 @@
 import GalleryGrid from "@/components/gallery-grid";
 import { fetchBlocksBySlug, fetchImages } from "../../lib/contentfulData";
 import Content from "../content";
+import Head from "next/head";
 
 // Set metadata
 export const metadata = {
@@ -21,16 +22,25 @@ export default async function Gallery() {
   const [english, spanish] = await Promise.all([blocksEnglish, blocksSpanish]);
 
   return (
-    <main>
-      {english && spanish && (
-        <Content
-          key={Math.random()}
-          englishBlocks={english}
-          spanishBlocks={spanish}
+    <>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://delvillalgardening.com/gallery"
+          key="canonical"
         />
-      )}
-      <GalleryGrid images={images} />
-      ;
-    </main>
+      </Head>
+			<main>
+				{english && spanish && (
+					<Content
+						key={Math.random()}
+						englishBlocks={english}
+						spanishBlocks={spanish}
+					/>
+				)}
+				<GalleryGrid images={images} />
+				;
+			</main>
+    </>
   );
 }

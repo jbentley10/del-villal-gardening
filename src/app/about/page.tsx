@@ -2,6 +2,7 @@
  * @file page.tsx
  */
 // Import components and utils
+import Head from "next/head";
 import { fetchBlocksBySlug } from "../../lib/contentfulData";
 import Content from "../content";
 
@@ -19,7 +20,15 @@ export default async function About() {
   const [english, spanish] = await Promise.all([blocksEnglish, blocksSpanish]);
 
   return (
-    <main>
+    <div>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://delvillalgardening.com/about"
+          key="canonical"
+        />
+      </Head>
+      <main>
       {english && spanish && (
         <Content
           key={Math.random()}
@@ -29,5 +38,6 @@ export default async function About() {
       )}
       ;
     </main>
+    </div>
   );
 }
