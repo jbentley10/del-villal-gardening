@@ -36,10 +36,6 @@ export const Footer = () => {
       <p className={"text-center mt-12 pb-10"}>
         &copy; {new Date().getFullYear()}{" "}Del Villal Gardening
         <br />
-        <br />
-        68090 Tortuga Rd, Cathedral City, CA, 92234
-        <br />
-        <br />
         Website design by <Link
           className={"font-bold"}
           href='https://palmspringswebdesign.net'
