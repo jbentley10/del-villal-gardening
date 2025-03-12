@@ -2,6 +2,7 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Links } from "./ui/links";
+import { FaInstagram, FaYelp } from 'react-icons/fa'
 
 export const Footer = () => {
   return (
@@ -29,7 +30,13 @@ export const Footer = () => {
             >
               <Links orientation='vertical' size={"large"} />
             </div>
-            <a href="tel:+17608445270"><h3 className="md:pl-4 text-center md:text-left">(760) 844-5270</h3></a>
+            <div className="flex flex-col md:pl-4 text-center md:text-left">
+              <a className={'mb-6'} href="tel:+17608445270"><h3>(760) 844-5270</h3></a>
+              <div className="flex flex-row">
+                <a href="https://instagram.com/delvillalgardening" target="blank"><FaInstagram className="text-4xl mr-4" /></a>
+                <a href="https://www.yelp.com/biz/del-villal-gardening-cathedral-city" target="blank"><FaYelp className="text-4xl" /></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
