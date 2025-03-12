@@ -32,7 +32,7 @@ export const Footer = () => {
             </div>
             <div className="flex flex-col md:pl-4 text-center md:text-left">
               <a className={'mb-6'} href="tel:+17608445270"><h3>(760) 844-5270</h3></a>
-              <div className="flex flex-row">
+              <div className="flex flex-row justify-center md:justify-normal">
                 <a href="https://instagram.com/delvillalgardening" target="blank"><FaInstagram className="text-4xl mr-4" /></a>
                 <a href="https://www.yelp.com/biz/del-villal-gardening-cathedral-city" target="blank"><FaYelp className="text-4xl" /></a>
               </div>
